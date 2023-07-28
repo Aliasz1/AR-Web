@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AR YouTube Video Player</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs="detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+        <a-marker type="pattern" url="./hiro-marker.patt">
+            <!-- Inside the a-marker element -->
+<a-entity
+position="0 0 0"
+scale="2 2 2"
+material="shader: flat; src: #video"></a-entity>
+
+<!-- Create a video element and set its source to the YouTube video -->
+<video id="video" autoplay loop crossorigin="anonymous" webkit-playsinline playsinline>
+<source src="https://www.youtube.com/embed/SXHMnicI6Pg" type="video/mp4">
+</video>
+        </a-marker>
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+</html>
