@@ -7,36 +7,107 @@
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script>
-      AFRAME.registerComponent("video-controller", {
+      AFRAME.registerComponent("video-controller1", {
           init: function () {
-              const target = document.getElementById("target");
-              const video = document.getElementById("video");
+              const target1 = document.getElementById("target1");
+              const video1 = document.getElementById("video1");
 
               // detect target found
-              target.addEventListener("targetFound", event => {
-                  console.log("target found");
-                  this.found = true;
-                  video.play();
+              target1.addEventListener("targetFound", event => {
+                console.log("target found");
+                this.found = true;
+                video1.play();
               });
               // detect target lost
-              target.addEventListener("targetLost", event => {
-                  console.log("target lost");
-                  this.found = false
-                  video.pause();
+              target1.addEventListener("targetLost", event => {
+                console.log("target lost");
+                this.found = false
+                video1.pause();
               });
           }
       })
 
+      AFRAME.registerComponent("video-controller2", {
+        init: function () {
+          const video2 = document.getElementById("video2");
+          const target2 = document.getElementById("target2");
+
+          // detect target found
+          target2.addEventListener("targetFound", event => {
+            console.log("target found");
+            this.found = true;
+            video2.play();
+          });
+          // detect target lost
+          target2.addEventListener("targetLost", event => {
+            console.log("target lost");
+            this.found = false
+            video2.pause();
+          });
+        }
+      })
+
+      AFRAME.registerComponent("video-controller3", {
+        init: function () {
+          const video3 = document.getElementById("video3");
+          const target3 = document.getElementById("target3");
+
+          // detect target found
+          target3.addEventListener("targetFound", event => {
+            console.log("target found");
+            this.found = true;
+            video3.play();
+          });
+          // detect target lost
+          target3.addEventListener("targetLost", event => {
+            console.log("target lost");
+            this.found = false
+            video3.pause();
+          });
+        }
+      })
+
+      AFRAME.registerComponent("video-controller4", {
+        init: function () {
+          const video4 = document.getElementById("video4");
+          const target4 = document.getElementById("target4");
+
+          // detect target found
+          target4.addEventListener("targetFound", event => {
+            console.log("target found");
+            this.found = true;
+            video4.play();
+          });
+          // detect target lost
+          target4.addEventListener("targetLost", event => {
+            console.log("target lost");
+            this.found = false
+            video4.pause();
+          });
+        }
+      })
   </script>
   </head>
   <body>
     <a-scene mindar-image="imageTargetSrc: ./targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
-        <video id="video" src="./test.mp4" preload></video>
+        <video id="video1" src="./kayum o ya kayum.mp4" preload></video>
+        <video id="video2" src="./Kayum.mp4" preload></video>
+        <video id="video3" src="./temarok 1.mp4" preload></video>
+        <video id="video4" src="./temarok 2.1 compressed.mp4" preload></video>
       </a-assets>
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      <a-entity id="target" mindar-image-target="targetIndex: 0">
-        <a-plane class="clickable" material="src: #video; opacity: 1; transparent: true" video-controller position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>
+      <a-entity id="target1" mindar-image-target="targetIndex: 0">
+        <a-plane class="clickable" material="src: #video1; opacity: 1; transparent: true" video-controller1 position="0 0 0" height="2" width="1" rotation="0 0 0"></a-plane>
+      </a-entity>
+      <a-entity id="target2" mindar-image-target="targetIndex: 1">
+        <a-plane class="clickable" material="src: #video2; opacity: 1; transparent: true" video-controller2 position="0 0 0" height="1" width="2" rotation="0 0 0"></a-plane>
+      </a-entity>
+      <a-entity id="target3" mindar-image-target="targetIndex: 2">
+        <a-plane class="clickable" material="src: #video3; opacity: 1; transparent: true" video-controller3 position="0 0 0" height="1" width="2" rotation="0 0 0"></a-plane>
+      </a-entity>
+      <a-entity id="target4" mindar-image-target="targetIndex: 3">
+        <a-plane class="clickable" material="src: #video4; opacity: 1; transparent: true" video-controller4 position="0 0 0" height="1" width="2" rotation="0 0 0"></a-plane>
       </a-entity>
     </a-scene>
   </body>
