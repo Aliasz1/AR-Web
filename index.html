@@ -87,6 +87,18 @@
         }
       })
   </script>
+  <style>
+    /* Some basic styling for the footer */
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
   </head>
   <body>
     <a-scene mindar-image="imageTargetSrc: ./targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
@@ -110,5 +122,9 @@
         <a-plane class="clickable" material="src: #video4; opacity: 1; transparent: true" video-controller4 position="0 0 0" height="0.57" width="1.1" rotation="0 0 0"></a-plane>
       </a-entity>
     </a-scene>
+
+    <footer>
+      <p>&copy; 2023 Atlarus Enterprise. All rights reserved.</p>
+  </footer>
   </body>
 </html>
