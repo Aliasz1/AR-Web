@@ -5,7 +5,6 @@
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.2/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
-    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
     <script>
       AFRAME.registerComponent("video-controller1", {
           init: function () {
@@ -90,18 +89,33 @@
   <style>
     /* Some basic styling for the footer */
     footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 5px;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      z-index: 1000; /* Set a higher z-index value */
+    }
+    table {
+      margin: 0 auto;
+    }
+
+    td {
+      padding: 5px 15px 5px 15px; /* Adjust the value as needed */
+      color: white;
+      font-size: smaller;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    td a {
+      text-decoration: underline;
+      color: inherit;
     }
 </style>
   </head>
   <body>
-    <a-scene mindar-image="filterMinCF:0.000000000000000000001; filterBeta: 100000000; imageTargetSrc: ./targets.mind;  warmupTolerance: 1; missTolerance: 1" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene mindar-image="filterMinCF:0.000000000000000000001; filterBeta: 100000000; imageTargetSrc: ./targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
         <video id="video1" src="./kayum o ya kayum.mp4" preload></video>
         <video id="video2" src="./Kayum.mp4" preload></video>
@@ -110,21 +124,33 @@
       </a-assets>
       <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
       <a-entity id="target1" mindar-image-target="targetIndex: 0">
-        <a-plane class="clickable" material="src: #video1; opacity: 1; transparent: true" video-controller1 position="0 0 0" height="2" width="1" rotation="0 0 0"></a-plane>
+        <a-plane class="clickable" material="src: #video1; opacity: 1; transparent: true" video-controller1 position="0 0 0" height="1.75" width="1" rotation="0 0 0"></a-plane>
       </a-entity>
       <a-entity id="target2" mindar-image-target="targetIndex: 1">
-        <a-plane class="clickable" material="src: #video2; opacity: 1; transparent: true" video-controller2 position="0 0 0" height="0.57" width="1" rotation="0 0 0"></a-plane>
+        <a-plane class="clickable" material="src: #video2; opacity: 1; transparent: true" video-controller2 position="0 0 0" height="0.55" width="0.85" rotation="0 0 0"></a-plane>
       </a-entity>
       <a-entity id="target3" mindar-image-target="targetIndex: 2">
-        <a-plane class="clickable" material="src: #video3; opacity: 1; transparent: true" video-controller3 position="0 0 0" height="0.57" width="1" rotation="0 0 0"></a-plane>
+        <a-plane class="clickable" material="src: #video3; opacity: 1; transparent: true" video-controller3 position="0 0 0" height="0.48" width="0.88" rotation="0 0 0"></a-plane>
       </a-entity>
       <a-entity id="target4" mindar-image-target="targetIndex: 3">
-        <a-plane class="clickable" material="src: #video4; opacity: 1; transparent: true" video-controller4 position="0 0 0" height="0.57" width="1" rotation="0 0 0"></a-plane>
+        <a-plane class="clickable" material="src: #video4; opacity: 1; transparent: true" video-controller4 position="0 0 0" height="0.48" width="0.9" rotation="0 0 0"></a-plane>
       </a-entity>
     </a-scene>
 
     <footer>
-      <p>Developed by Brunei's Atlarus Enterprise. Get your customised digital solution!</p>
+      <table>
+        <tr>
+          <td>
+            <p>Instagram: <a href="https://www.instagram.com/atlarusenterprise/">@atlarusenterprise</a></p>
+          </td>
+          <td>
+            <p>Developed by Brunei's <a href="https://atlarus.github.io/live">Atlarus Enterprise</a></p>
+          </td>
+          <td>
+            <p>LinkedIn: <a href="https://www.linkedin.com/company/atlarus-enterprise/">Atlarus Enterprise</a></p>
+          </td>
+        </tr>
+      </table>
   </footer>
   </body>
 </html>
