@@ -101,7 +101,7 @@
 </style>
   </head>
   <body>
-    <a-scene mindar-image="imageTargetSrc: ./targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene mindar-image="filterMinCF:0.000000000000000000001; filterBeta: 100000000; imageTargetSrc: ./targets.mind;  warmupTolerance: 1; missTolerance: 1" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
         <video id="video1" src="./kayum o ya kayum.mp4" preload></video>
         <video id="video2" src="./Kayum.mp4" preload></video>
@@ -124,7 +124,7 @@
     </a-scene>
 
     <footer>
-      <p>Developed by Atlarus Enterprise. Get your customised digital solution!</p>
+      <p>Developed by Brunei's Atlarus Enterprise. Get your customised digital solution!</p>
   </footer>
   </body>
 </html>
