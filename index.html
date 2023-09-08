@@ -15,12 +15,16 @@
                 console.log("target found");
                 this.found = true;
                 video1.play();
+                video1.muted = false;
+                video1.currentTime = 0;
               });
               // detect target lost
               target1.addEventListener("targetLost", event => {
                 console.log("target lost");
                 this.found = false
                 video1.pause();
+                video1.muted = true;
+                video1.currentTime = 0;
               });
           }
       })
@@ -35,12 +39,16 @@
             console.log("target found");
             this.found = true;
             video2.play();
+            video2.muted = false;
+            video2.currentTime = 0;
           });
           // detect target lost
           target2.addEventListener("targetLost", event => {
             console.log("target lost");
             this.found = false
             video2.pause();
+            video2.muted = true;
+            video2.currentTime = 0;
           });
         }
       })
@@ -55,12 +63,16 @@
             console.log("target found");
             this.found = true;
             video3.play();
+            video3.muted = false;
+            video3.currentTime = 0;
           });
           // detect target lost
           target3.addEventListener("targetLost", event => {
             console.log("target lost");
             this.found = false
             video3.pause();
+            video3.muted = true;
+            video3.currentTime = 0;
           });
         }
       })
@@ -75,12 +87,16 @@
             console.log("target found");
             this.found = true;
             video4.play();
+            video4.muted = false;
+            video4.currentTime = 0;
           });
           // detect target lost
           target4.addEventListener("targetLost", event => {
             console.log("target lost");
             this.found = false
             video4.pause();
+            video4.muted = true;
+            video4.currentTime = 0;
           });
         }
       })
@@ -116,10 +132,10 @@
   <body>
     <a-scene mindar-image="filterMinCF:0.000000000000000000001; filterBeta: 100000000; imageTargetSrc: ./targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
-        <video id="video1" src="./kayum o ya kayum.mp4" preload webkit-playsinline playsinline loop="true"></video>
-        <video id="video2" src="./Kayum.mp4" preload webkit-playsinline playsinline loop="true"></video>
-        <video id="video3" src="./temarok 1.mp4" preload webkit-playsinline playsinline loop="true"></video>
-        <video id="video4" src="./temarok 2.1 compressed.mp4" preload webkit-playsinline playsinline loop="true"></video>
+        <video id="video1" src="./kayum o ya kayum.mp4" preload webkit-playsinline playsinline loop autoplay muted></video>
+        <video id="video2" src="./Kayum.mp4" preload webkit-playsinline playsinline loop autoplay muted></video>
+        <video id="video3" src="./temarok 1.mp4" preload webkit-playsinline playsinline loop autoplay muted></video>
+        <video id="video4" src="./temarok 2.1 compressed.mp4" preload webkit-playsinline playsinline loop autoplay muted></video>
       </a-assets>
       <a-camera camera position="0 1.6 0" look-controls="enabled: false"></a-camera>
       <a-entity id="target1" mindar-image-target="targetIndex: 0">
