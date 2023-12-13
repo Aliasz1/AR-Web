@@ -130,7 +130,7 @@
 </style>
   </head>
   <body>
-    <a-scene mindar-image="filterMinCF:0.000000000000000000001; filterBeta: 100000000; imageTargetSrc: ./targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-scene mindar-image="filterMinCF:0.1; filterBeta: 10; warmupTolerance: 1; imageTargetSrc: ./targets.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
       <a-assets>
         <video id="video1" src="./kayum o ya kayum.mp4" preload webkit-playsinline playsinline loop autoplay muted></video>
         <video id="video2" src="./Kayum.mp4" preload webkit-playsinline playsinline loop autoplay muted></video>
@@ -139,8 +139,7 @@
       </a-assets>
       <a-camera camera position="0 1.6 0" look-controls="enabled: false"></a-camera>
       <a-entity id="target1" mindar-image-target="targetIndex: 0">
-        <!-- <a-video webkit-playsinline playsinline material="src: #video1; opacity: 1; transparent: true" video-controller1 position="0 0 0" height="1.75" width="1" rotation="0 0 0"></a-video> -->
-        <a-plane src="#video1" video-controller1 webkit-playsinline playsinline></a-plane>
+        <a-video webkit-playsinline playsinline material="src: #video1; opacity: 1; transparent: true" video-controller1 position="0 0 0" height="1.75" width="1" rotation="0 0 0"></a-video>
       </a-entity>
       <a-entity id="target2" mindar-image-target="targetIndex: 1">
         <a-video webkit-playsinline playsinline material="src: #video2; opacity: 1; transparent: true" video-controller2 position="0 0 0" height="0.55" width="0.85" rotation="0 0 0"></a-video>
